@@ -283,7 +283,7 @@
         /* KONTENER STRON               */
         /* ============================ */
         #app-wrapper {
-            height: 500vh; /* Powiększone do 5 ekranów */
+            height: 500vh; /* 5 ekranów */
             width: 100%;
             transition: transform 1s cubic-bezier(0.65, 0, 0.35, 1);
         }
@@ -485,7 +485,7 @@
         </div>
     </div>
 
-    <!-- MODAL ZARZĄDZANIA TICKETAMI (Dla Ownera/Admina) -->
+    <!-- MODAL ZARZĄDZANIA TICKETAMI -->
     <div class="modal" id="manageTicketsModal">
         <div class="modal-content" style="border-color: #3498db; box-shadow: 0 0 25px rgba(52, 152, 219, 0.5); width: 450px;">
             <h3 style="color: #3498db;">All User Tickets</h3>
@@ -623,7 +623,9 @@
         });
 
         btnConfigs.addEventListener('click', () => { alert('Coming Soon!'); });
-        btnDownload.addEventListener('click', () => { alert('Downloading Loader.exe... (Simulation)'); });
+        
+        // ZMIENIONY KOMUNIKAT POBIERANIA
+        btnDownload.addEventListener('click', () => { alert('Downloading Loader PROTOTYPE.exe'); });
 
         // PRZEJŚCIE DO SYSTEMU TICKETÓW
         btnTickets.addEventListener('click', () => {
