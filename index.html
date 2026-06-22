@@ -5,11 +5,19 @@ html_content = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Prototype</title>
     <style>
+        /* ============================ */
+        /* WSPÓLNE SUWAKI (SCROLLBARY)  */
+        /* ============================ */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #ff66b2; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #ff3385; }
+
         body {
             background-color: black;
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            overflow: hidden; /* Przesuwanie sekcji rozwiązuje #app-wrapper */
         }
 
         /* ============================ */
@@ -20,6 +28,7 @@ html_content = """<!DOCTYPE html>
             top: 20px;
             right: 30px;
             z-index: 999;
+            transition: opacity 0.4s ease, transform 0.4s ease; /* Płynne znikanie */
         }
 
         .login-container {
@@ -172,6 +181,7 @@ html_content = """<!DOCTYPE html>
             gap: 10px;
             box-shadow: 0 0 15px rgba(255, 102, 178, 0.3);
             z-index: 999;
+            transition: opacity 0.4s ease, transform 0.4s ease; /* Płynne znikanie */
         }
 
         .status-dot {
@@ -222,9 +232,6 @@ html_content = """<!DOCTYPE html>
             overflow-y: auto;
             box-sizing: border-box;
         }
-
-        .modal-content::-webkit-scrollbar { width: 5px; }
-        .modal-content::-webkit-scrollbar-thumb { background: #ff66b2; border-radius: 10px; }
 
         .modal-content h3 {
             color: #ff66b2;
@@ -302,11 +309,14 @@ html_content = """<!DOCTYPE html>
             align-items: center;
             box-sizing: border-box;
             position: relative;
+            overflow-y: auto; /* SUWAK W KAŻDEJ ZAKŁADCE */
+            overflow-x: hidden;
+            padding-bottom: 50px; /* Dodatkowy margines na dole na swobodne przewijanie */
         }
 
         /* EKRAN 1: HOME */
         #screen-home { justify-content: flex-start; padding-top: 20vh; }
-        .header-container { text-align: center; padding: 0 10px; }
+        .header-container { text-align: center; padding: 0 10px; margin-top: 20px; }
 
         h1.title { color: #ff66b2; font-size: 4em; margin: 0; letter-spacing: 8px; text-shadow: 0 0 15px rgba(255, 102, 178, 0.6); }
         p.none-text { color: #ff66b2; font-size: 1.5em; margin: 5px 0 0 0; letter-spacing: 3px; text-shadow: 0 0 10px rgba(255, 102, 178, 0.5); }
@@ -329,8 +339,8 @@ html_content = """<!DOCTYPE html>
         .btn-instructions:hover { background: #ff66b2; color: black; box-shadow: 0 0 15px #ff66b2; }
 
         /* EKRAN 2: SUBSCRIPTIONS */
-        #screen-subs { justify-content: flex-start; padding: 10vh 0 5vh 0; }
-        .subs-header { text-align: center; margin-bottom: 8vh; padding: 0 10px; }
+        #screen-subs { justify-content: flex-start; padding: 10vh 0 10vh 0; }
+        .subs-header { text-align: center; margin-bottom: 8vh; padding: 0 10px; margin-top: 20px; }
         h2.subs-title { color: #ff66b2; font-size: 3.5em; margin: 0; letter-spacing: 5px; text-shadow: 0 0 15px rgba(255, 102, 178, 0.6); }
         p.subs-subtitle { color: #ff66b2; font-size: 1.5em; margin-top: 15px; font-weight: bold; letter-spacing: 1px; text-shadow: 0 0 8px rgba(255, 102, 178, 0.4); }
 
@@ -348,14 +358,14 @@ html_content = """<!DOCTYPE html>
         /* ============================ */
         /* EKRAN 4: TICKETS             */
         /* ============================ */
-        #screen-tickets { justify-content: flex-start; padding: 10vh 0 5vh 0; }
+        #screen-tickets { justify-content: flex-start; padding: 10vh 0 10vh 0; }
         
         .ticket-container { display: flex; flex-direction: column; align-items: center; background: rgba(20,20,20,0.8); padding: 30px; border-radius: 20px; border: 1px solid #ff66b2; box-shadow: 0 0 20px rgba(255, 102, 178, 0.2); box-sizing: border-box; }
         .ticket-textarea { width: 350px; height: 120px; resize: none; font-size: 1em; padding: 15px; border-radius: 15px; box-sizing: border-box; }
         
         .ticket-warning { color: #ff3333; font-size: 0.85em; margin-top: 15px; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 5px rgba(255, 51, 51, 0.5); }
 
-        .tickets-list { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; width: 410px; max-height: 35vh; overflow-y: auto; padding-right: 5px; box-sizing: border-box; }
+        .tickets-list { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; width: 410px; max-height: 45vh; overflow-y: auto; padding-right: 5px; box-sizing: border-box; }
         .ticket-card { background: #111; border: 1px solid #444; border-left: 5px solid #ff66b2; padding: 15px; border-radius: 10px; color: white; display: flex; flex-direction: column; gap: 10px; }
         .ticket-card.admin-view { border-left-color: #3498db; }
         .ticket-header { display: flex; justify-content: space-between; font-size: 0.85em; color: #aaa; border-bottom: 1px solid #333; padding-bottom: 5px; }
@@ -368,15 +378,10 @@ html_content = """<!DOCTYPE html>
         .btn-reply { border-color: #3498db; color: #3498db; width: 100%; margin-top: 5px; }
         .btn-reply:hover { background: #3498db; color: black; box-shadow: 0 0 10px #3498db; }
 
-        /* Scrollbary dla list */
-        .tickets-list::-webkit-scrollbar, #adminTicketsList::-webkit-scrollbar { width: 5px; }
-        .tickets-list::-webkit-scrollbar-thumb { background: #ff66b2; border-radius: 10px; }
-        #adminTicketsList::-webkit-scrollbar-thumb { background: #3498db; border-radius: 10px; }
-
         /* ============================ */
         /* EKRAN 5: MORE INFO           */
         /* ============================ */
-        #screen-moreinfo { justify-content: flex-start; padding: 10vh 0 5vh 0; }
+        #screen-moreinfo { justify-content: flex-start; padding: 10vh 0 10vh 0; }
         .image-placeholder {
             width: 600px;
             height: 350px;
@@ -399,7 +404,6 @@ html_content = """<!DOCTYPE html>
         /* RESPONSIVE DESIGN (MOBILE)   */
         /* ============================ */
         @media (max-width: 768px) {
-            /* Górny pasek ulega zmianie na wyśrodkowany i bardziej kompaktowy */
             #top-bar { top: 10px; right: 50%; transform: translateX(50%); width: 95%; display: flex; justify-content: center; z-index: 1000; }
             .login-container { flex-direction: column; width: 100%; max-width: 300px; gap: 8px; }
             .login-input { width: 100%; box-sizing: border-box; text-align: center; }
@@ -408,34 +412,27 @@ html_content = """<!DOCTYPE html>
             .profile-info { align-items: center; }
             .top-btn { font-size: 0.7em; padding: 8px 12px; flex: 1; min-width: 80px; text-align: center; margin: 0 !important; }
             
-            /* Główne ekrany i teksty */
-            #screen-home { padding-top: 18vh; }
+            #screen-home { padding-top: 15vh; }
             h1.title { font-size: 2.2em; letter-spacing: 3px; }
             p.none-text { font-size: 1em; letter-spacing: 1px; }
             
-            /* Przyciski i Kontenery na Ekranie Głównym */
             .buttons-container { flex-direction: column; width: 85%; gap: 15px; align-items: center; }
             .btn { width: 100%; padding: 12px; font-size: 1em; }
             #downloadContainer { width: 85%; }
             
-            /* Status box */
             #cheat-status-box { right: 50%; transform: translateX(50%); bottom: 15px; width: max-content; padding: 8px 15px; font-size: 0.75em; }
             
-            /* Subskrypcje */
             h2.subs-title { font-size: 2em; letter-spacing: 2px; }
             p.subs-subtitle { font-size: 1em; }
             .cards-container { flex-direction: column; width: 90%; align-items: center; }
             .card { width: 100%; max-width: 300px; padding: 20px 10px; box-sizing: border-box; }
             
-            /* Tickety */
             .ticket-container { width: 90%; padding: 15px; box-sizing: border-box; }
             .ticket-textarea { width: 100%; }
-            .tickets-list { width: 90%; max-height: 40vh; }
+            .tickets-list { width: 90%; max-height: 50vh; }
             
-            /* More Info */
             .image-placeholder { width: 90%; height: 200px; font-size: 1em; text-align: center; }
             
-            /* Modale */
             .modal-content { width: 90%; padding: 20px; box-sizing: border-box; }
             .close-screen-btn { top: 15px; left: 15px; width: 35px; height: 35px; font-size: 1em; }
             .not-available-text { font-size: 1.5em; max-width: 90%; }
@@ -646,6 +643,35 @@ html_content = """<!DOCTYPE html>
     </div>
 
     <script>
+        // --- FUNKCJE CHOWANIA INTERFEJSU GŁÓWNEGO ---
+        const topBar = document.getElementById('top-bar');
+        const cheatStatus = document.getElementById('cheat-status-box');
+
+        function hideMainUI() {
+            topBar.style.opacity = '0';
+            topBar.style.pointerEvents = 'none';
+            if(window.innerWidth <= 768) {
+                // Na mniejszych ekranach można dodatkowo przesunąć pasek, żeby nie przeszkadzał
+                topBar.style.transform = 'translate(50%, -20px)';
+            }
+            
+            cheatStatus.style.opacity = '0';
+            cheatStatus.style.pointerEvents = 'none';
+        }
+
+        function showMainUI() {
+            topBar.style.opacity = '1';
+            topBar.style.pointerEvents = 'auto';
+            if(window.innerWidth <= 768) {
+                topBar.style.transform = 'translate(50%, 0)';
+            } else {
+                topBar.style.transform = 'translate(0, 0)';
+            }
+            
+            cheatStatus.style.opacity = '1';
+            cheatStatus.style.pointerEvents = 'auto';
+        }
+
         // --- ANIMACJE INTERFEJSU ---
         const arrow = document.getElementById('clickArrow');
         const buttons = document.getElementById('actionButtons');
@@ -668,6 +694,7 @@ html_content = """<!DOCTYPE html>
         btnBuy.addEventListener('click', () => {
             appWrapper.className = ""; 
             appWrapper.classList.add('slide-to-subs');
+            hideMainUI();
         });
 
         btnConfigs.addEventListener('click', () => { alert('Coming Soon!'); });
@@ -681,22 +708,28 @@ html_content = """<!DOCTYPE html>
             appWrapper.className = ""; 
             appWrapper.classList.add('slide-to-tickets');
             renderUserTickets();
+            hideMainUI();
         });
 
         btnMoreInfo.addEventListener('click', () => {
             appWrapper.className = ""; 
             appWrapper.classList.add('slide-to-moreinfo');
+            hideMainUI();
         });
 
         subCards.forEach(card => {
             card.addEventListener('click', () => {
                 appWrapper.className = ""; 
                 appWrapper.classList.add('slide-to-pay');
+                hideMainUI();
             });
         });
 
         backToHomeBtns.forEach(btn => {
-            btn.addEventListener('click', () => { appWrapper.className = ""; });
+            btn.addEventListener('click', () => { 
+                appWrapper.className = ""; 
+                showMainUI();
+            });
         });
 
         const OWNER_SECRET_PASSWORD = "moje_tajne_haslo123";
