@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Prototype</title>
+    <title>Prototype V2</title>
     <style>
         /* ============================ */
         /* WSPÓLNE SUWAKI (SCROLLBARY)  */
@@ -259,7 +259,6 @@
             margin-bottom: -5px;
         }
 
-        /* PRZYCISK WYJŚCIA X */
         .close-screen-btn {
             position: absolute;
             top: 25px;
@@ -351,18 +350,14 @@
         .card:hover { border-color: #ff66b2; box-shadow: 0 0 20px rgba(255, 102, 178, 0.4); transform: translateY(-10px); }
         .card:hover .card-duration { color: #ff66b2; }
 
-        /* EKRAN 3: KOMUNIKAT BRAKU DOSTĘPNOŚCI */
+        /* EKRAN 3: KOMUNIKAT */
         #screen-payment { justify-content: center; align-items: center; }
         .not-available-text { color: #ff66b2; font-size: 2.2em; font-weight: bold; text-align: center; letter-spacing: 2px; text-shadow: 0 0 20px rgba(255, 102, 178, 0.7); max-width: 80%; line-height: 1.5; }
 
-        /* ============================ */
-        /* EKRAN 4: TICKETS             */
-        /* ============================ */
+        /* EKRAN 4: TICKETS */
         #screen-tickets { justify-content: flex-start; padding: 10vh 0 120px 0; }
-        
         .ticket-container { display: flex; flex-direction: column; align-items: center; background: rgba(20,20,20,0.8); padding: 30px; border-radius: 20px; border: 1px solid #ff66b2; box-shadow: 0 0 20px rgba(255, 102, 178, 0.2); box-sizing: border-box; }
         .ticket-textarea { width: 350px; height: 120px; resize: none; font-size: 1em; padding: 15px; border-radius: 15px; box-sizing: border-box; }
-        
         .ticket-warning { color: #ff3333; font-size: 0.85em; margin-top: 15px; text-align: center; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 0 5px rgba(255, 51, 51, 0.5); }
 
         .tickets-list { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; width: 410px; padding-right: 5px; box-sizing: border-box; margin-bottom: 50px; }
@@ -378,61 +373,33 @@
         .btn-reply { border-color: #3498db; color: #3498db; width: 100%; margin-top: 5px; }
         .btn-reply:hover { background: #3498db; color: black; box-shadow: 0 0 10px #3498db; }
 
-        /* ============================ */
-        /* EKRAN 5: MORE INFO           */
-        /* ============================ */
+        /* EKRAN 5: MORE INFO */
         #screen-moreinfo { justify-content: flex-start; padding: 10vh 0 120px 0; }
-        .image-placeholder {
-            width: 600px;
-            height: 350px;
-            background: rgba(20, 20, 20, 0.8);
-            border: 2px dashed #ff66b2;
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ff66b2;
-            font-size: 1.5em;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 20px;
-            box-shadow: inset 0 0 20px rgba(255, 102, 178, 0.1);
-            box-sizing: border-box;
-        }
+        .image-placeholder { width: 600px; height: 350px; background: rgba(20, 20, 20, 0.8); border: 2px dashed #ff66b2; border-radius: 20px; display: flex; justify-content: center; align-items: center; color: #ff66b2; font-size: 1.5em; text-transform: uppercase; letter-spacing: 3px; margin-top: 20px; box-shadow: inset 0 0 20px rgba(255, 102, 178, 0.1); box-sizing: border-box; }
 
-        /* ============================ */
-        /* RESPONSIVE DESIGN (MOBILE)   */
-        /* ============================ */
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             #top-bar { top: 10px; right: 50%; transform: translateX(50%); width: 95%; display: flex; justify-content: center; z-index: 1000; }
             .login-container { flex-direction: column; width: 100%; max-width: 300px; gap: 8px; }
             .login-input { width: 100%; box-sizing: border-box; text-align: center; }
-            
             .profile-container { flex-wrap: wrap; justify-content: center; padding: 15px; width: 100%; box-sizing: border-box; gap: 10px; }
             .profile-info { align-items: center; }
             .top-btn { font-size: 0.7em; padding: 8px 12px; flex: 1; min-width: 80px; text-align: center; margin: 0 !important; }
-            
             #screen-home { padding-top: 15vh; padding-bottom: 120px; }
             h1.title { font-size: 2.2em; letter-spacing: 3px; }
             p.none-text { font-size: 1em; letter-spacing: 1px; }
-            
             .buttons-container { flex-direction: column; width: 85%; gap: 15px; align-items: center; margin-bottom: 60px; }
             .btn { width: 100%; padding: 12px; font-size: 1em; }
             #downloadContainer { width: 85%; margin-bottom: 60px; }
-            
             #cheat-status-box { right: 50%; transform: translateX(50%); bottom: 15px; width: max-content; padding: 8px 15px; font-size: 0.75em; }
-            
             h2.subs-title { font-size: 2em; letter-spacing: 2px; }
             p.subs-subtitle { font-size: 1em; }
             .cards-container { flex-direction: column; width: 90%; align-items: center; padding-bottom: 60px; }
             .card { width: 100%; max-width: 300px; padding: 20px 10px; box-sizing: border-box; }
-            
             .ticket-container { width: 90%; padding: 15px; box-sizing: border-box; }
             .ticket-textarea { width: 100%; }
             .tickets-list { width: 90%; margin-bottom: 60px; }
-            
             .image-placeholder { width: 90%; height: 200px; font-size: 1em; text-align: center; }
-            
             .modal-content { width: 90%; padding: 20px; box-sizing: border-box; }
             .close-screen-btn { top: 15px; left: 15px; width: 35px; height: 35px; font-size: 1em; }
             .not-available-text { font-size: 1.5em; max-width: 90%; }
@@ -465,13 +432,13 @@
         <span>Cheat Status: <span class="status-text">Offline</span></span>
     </div>
 
+    <!-- MODAL EDYCJI PROFILU -->
     <div class="modal" id="editModal">
         <div class="modal-content">
             <h3>Edit Profile</h3>
             <input type="text" id="editUsernameInput" placeholder="New Username" class="login-input">
             <input type="password" id="editPasswordInput" placeholder="New Password" class="login-input">
             <input type="text" id="editAvatarInput" placeholder="Avatar (np. x)" class="login-input" maxlength="2">
-            
             <div style="display: flex; gap: 10px; margin-top: 5px;">
                 <button class="top-btn" id="saveProfileBtn" style="flex: 1;">Save</button>
                 <button class="top-btn logout-btn" id="closeModalBtn" style="flex: 1;">Cancel</button>
@@ -480,6 +447,7 @@
         </div>
     </div>
 
+    <!-- MODAL USUWANIA KONTA -->
     <div class="modal" id="deleteConfirmModal">
         <div class="modal-content" style="border-color: #ff3333; box-shadow: 0 0 25px rgba(255, 51, 51, 0.5); width: 280px; text-align: center;">
             <h3 style="color: #ff3333; margin-bottom: 5px;">Warning</h3>
@@ -491,12 +459,11 @@
         </div>
     </div>
 
+    <!-- MODAL ADMINA -->
     <div class="modal" id="adminModal">
         <div class="modal-content" style="border-color: #9b59b6; box-shadow: 0 0 25px rgba(155, 89, 182, 0.5); width: 320px;">
             <h3 style="color: #9b59b6;">Admin Panel</h3>
-            
             <button class="top-btn" id="openTicketsManagerBtn" style="border-color: #3498db; color: #3498db; margin-bottom: 15px; width: 100%; font-size: 1em;">Manage Tickets</button>
-
             <div class="admin-section">
                 <label>Rank Management</label>
                 <input type="text" id="targetUserInput" placeholder="Type Username" class="login-input" style="border-color: #9b59b6;">
@@ -505,7 +472,6 @@
                     <button class="top-btn" id="giveUserBtn" style="border-color: #aaa; color: #aaa; flex: 1;">Set User</button>
                 </div>
             </div>
-
             <div class="admin-section">
                 <label>Give Subscription</label>
                 <input type="text" id="subTargetInput" placeholder="Target Username" class="login-input" style="border-color: #9b59b6;">
@@ -517,24 +483,20 @@
                 </select>
                 <button class="top-btn" id="giveSubBtn" style="border-color: #9b59b6; color: #9b59b6; font-size: 1em;">Give Sub</button>
             </div>
-
-            <div style="display: flex; flex-direction: column; margin-top: 5px;">
-                <button class="top-btn logout-btn" id="closeAdminModalBtn" style="width: 100%;">Close Panel</button>
-            </div>
+            <button class="top-btn logout-btn" id="closeAdminModalBtn" style="width: 100%; margin-top: 5px;">Close Panel</button>
         </div>
     </div>
 
+    <!-- MODAL ZARZĄDZANIA TICKETAMI -->
     <div class="modal" id="manageTicketsModal">
         <div class="modal-content" style="border-color: #3498db; box-shadow: 0 0 25px rgba(52, 152, 219, 0.5); width: 450px;">
             <h3 style="color: #3498db;">All User Tickets</h3>
-            
-            <div id="adminTicketsList" style="display: flex; flex-direction: column; gap: 15px; max-height: 50vh; overflow-y: auto; padding-right: 5px;">
-                </div>
-            
+            <div id="adminTicketsList" style="display: flex; flex-direction: column; gap: 15px; max-height: 50vh; overflow-y: auto; padding-right: 5px;"></div>
             <button class="top-btn logout-btn" id="closeManageTicketsBtn" style="width: 100%; margin-top: 10px;">Close Panel</button>
         </div>
     </div>
 
+    <!-- MODAL INSTRUKCJI -->
     <div class="modal" id="instructionsModal">
         <div class="modal-content" style="border-color: #ff66b2; box-shadow: 0 0 25px rgba(255, 102, 178, 0.5); width: 380px;">
             <h3 style="color: #ff66b2; font-size: 1.8em; text-transform: none; margin-bottom: 5px;">How to inject cheat???</h3>
@@ -551,30 +513,27 @@
     </div>
 
     <div id="app-wrapper">
-        
+        <!-- EKRAN 1: HOME -->
         <div id="screen-home" class="screen">
             <div class="header-container">
                 <h1 class="title">PROTOTYPE</h1>
                 <p class="none-text">!!Best Undected Cs2 Cheats!!</p>
                 <div class="arrow" id="clickArrow">↓</div>
             </div>
-
             <div class="buttons-container" id="actionButtons">
                 <button class="btn" id="btnBuy">Buy</button>
                 <button class="btn" id="btnConfigs">Configs</button>
                 <button class="btn" id="btnTickets">Tickets</button>
                 <button class="btn" id="btnMoreInfo">More Info</button>
             </div>
-
             <div id="downloadContainer" style="display: none; flex-direction: column; align-items: center;">
                 <button class="btn btn-download" id="btnDownload">Download Loader</button>
-                <div class="sub-time-box">
-                    Time left: <span id="subTimeLeft">...</span>
-                </div>
+                <div class="sub-time-box">Time left: <span id="subTimeLeft">...</span></div>
                 <button class="btn btn-instructions" id="btnInstructions">Instructions</button>
             </div>
         </div>
 
+        <!-- EKRAN 2: SUBSKRYPCJE -->
         <div id="screen-subs" class="screen">
             <button class="close-screen-btn backToHome">X</button>
             <div class="subs-header">
@@ -589,193 +548,136 @@
             </div>
         </div>
 
+        <!-- EKRAN 3: BLOKADA -->
         <div id="screen-payment" class="screen">
             <button class="close-screen-btn backToHome">X</button>
-            <div class="not-available-text">
-                Cheat is not available for purchase at the moment
-            </div>
+            <div class="not-available-text">Cheat is not available for purchase at the moment</div>
         </div>
 
+        <!-- EKRAN 4: TICKETS -->
         <div id="screen-tickets" class="screen">
             <button class="close-screen-btn backToHome">X</button>
             <div class="subs-header">
                 <h2 class="subs-title" style="font-size: 3em;">Tickets</h2>
                 <p class="subs-subtitle">If you have any problem, describe it to us</p>
             </div>
-            
             <div class="ticket-container">
                 <textarea id="ticketMessage" placeholder="Type your issue here..." class="login-input ticket-textarea"></textarea>
                 <button class="btn btn-download" id="submitTicketBtn" style="margin-top: 15px; padding: 10px 40px;">Sent</button>
                 <div class="ticket-warning">For now, tickets will be ignored by the administration</div>
             </div>
-
-            <div id="userTicketsList" class="tickets-list">
-                </div>
+            <div id="userTicketsList" class="tickets-list"></div>
         </div>
 
+        <!-- EKRAN 5: MORE INFO -->
         <div id="screen-moreinfo" class="screen">
             <button class="close-screen-btn backToHome">X</button>
             <div class="subs-header">
                 <h2 class="subs-title" style="font-size: 3em;">More Info</h2>
                 <p class="subs-subtitle">See what our cheat looks like</p>
             </div>
-            
-            <div class="image-placeholder">
-                Place for an Image
-            </div>
+            <div class="image-placeholder">Place for an Image</div>
         </div>
-
     </div>
 
     <script>
+        // ==========================================
+        // SYSTEM BAZY DANYCH (Try-Catch) - Zapobiega crashom
+        // Nowe klucze pt_v2... upewniają się, że zaczynamy z całkowicie czystą bazą!
+        // ==========================================
+        function getDB(key, defaultVal) {
+            try { 
+                let data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : defaultVal;
+            } catch (e) { return defaultVal; }
+        }
+        function setDB(key, val) {
+            localStorage.setItem(key, JSON.stringify(val));
+        }
+
+        const KEY_USER = 'pt_v2_user';
+        const KEY_PASS = 'pt_v2_pass';
+        const KEY_AVATAR = 'pt_v2_avatar';
+        
+        const DB_USERS = 'pt_v2_db_users';
+        const DB_AVATARS = 'pt_v2_db_avatars';
+        const DB_SUBS = 'pt_v2_db_subs';
+        const DB_ADMINS = 'pt_v2_db_admins';
+        const DB_TICKETS = 'pt_v2_db_tickets';
+
+        const OWNER_SECRET_PASSWORD = "moje_tajne_haslo123";
+
+        // ==========================================
+        // UI & ELEMENTY
+        // ==========================================
         const topBar = document.getElementById('top-bar');
         const cheatStatus = document.getElementById('cheat-status-box');
+        const appWrapper = document.getElementById('app-wrapper');
 
         function hideMainUI() {
-            topBar.style.opacity = '0';
-            topBar.style.pointerEvents = 'none';
-            if(window.innerWidth <= 768) {
-                topBar.style.transform = 'translate(50%, -20px)';
-            }
-            cheatStatus.style.opacity = '0';
-            cheatStatus.style.pointerEvents = 'none';
+            topBar.style.opacity = '0'; topBar.style.pointerEvents = 'none';
+            if(window.innerWidth <= 768) topBar.style.transform = 'translate(50%, -20px)';
+            cheatStatus.style.opacity = '0'; cheatStatus.style.pointerEvents = 'none';
         }
-
         function showMainUI() {
-            topBar.style.opacity = '1';
-            topBar.style.pointerEvents = 'auto';
-            if(window.innerWidth <= 768) {
-                topBar.style.transform = 'translate(50%, 0)';
-            } else {
-                topBar.style.transform = 'translate(0, 0)';
-            }
-            cheatStatus.style.opacity = '1';
-            cheatStatus.style.pointerEvents = 'auto';
+            topBar.style.opacity = '1'; topBar.style.pointerEvents = 'auto';
+            if(window.innerWidth <= 768) topBar.style.transform = 'translate(50%, 0)';
+            else topBar.style.transform = 'translate(0, 0)';
+            cheatStatus.style.opacity = '1'; cheatStatus.style.pointerEvents = 'auto';
         }
 
-        const arrow = document.getElementById('clickArrow');
-        const buttons = document.getElementById('actionButtons');
-        const downloadContainer = document.getElementById('downloadContainer');
-        const btnBuy = document.getElementById('btnBuy');
-        const btnConfigs = document.getElementById('btnConfigs');
-        const btnTickets = document.getElementById('btnTickets');
-        const btnMoreInfo = document.getElementById('btnMoreInfo');
-        const btnDownload = document.getElementById('btnDownload');
-        const appWrapper = document.getElementById('app-wrapper');
-        const subCards = document.querySelectorAll('.sub-card');
-        const backToHomeBtns = document.querySelectorAll('.backToHome');
-
-        arrow.addEventListener('click', () => {
-            buttons.classList.add('show-buttons');
-            downloadContainer.classList.add('show-buttons');
-            arrow.classList.add('arrow-clicked');
+        document.getElementById('clickArrow').addEventListener('click', function() {
+            document.getElementById('actionButtons').classList.add('show-buttons');
+            document.getElementById('downloadContainer').classList.add('show-buttons');
+            this.classList.add('arrow-clicked');
         });
 
-        btnBuy.addEventListener('click', () => {
-            appWrapper.className = ""; 
-            appWrapper.classList.add('slide-to-subs');
-            hideMainUI();
-        });
-
-        btnConfigs.addEventListener('click', () => { alert('Coming Soon!'); });
-        btnDownload.addEventListener('click', () => { alert('Downloading Loader PROTOTYPE.exe'); });
-
-        btnTickets.addEventListener('click', () => {
-            const savedUser = localStorage.getItem('prototypeUsername');
-            if(!savedUser) { alert('You must be logged in to create tickets!'); return; }
-            appWrapper.className = ""; 
-            appWrapper.classList.add('slide-to-tickets');
+        document.getElementById('btnBuy').addEventListener('click', () => { appWrapper.className = "slide-to-subs"; hideMainUI(); });
+        document.getElementById('btnConfigs').addEventListener('click', () => alert('Coming Soon!'));
+        document.getElementById('btnDownload').addEventListener('click', () => alert('Downloading Loader PROTOTYPE.exe'));
+        
+        document.getElementById('btnTickets').addEventListener('click', () => {
+            if(!localStorage.getItem(KEY_USER)) { alert('You must be logged in to create tickets!'); return; }
+            appWrapper.className = "slide-to-tickets";
             renderUserTickets();
             hideMainUI();
         });
 
-        btnMoreInfo.addEventListener('click', () => {
-            appWrapper.className = ""; 
-            appWrapper.classList.add('slide-to-moreinfo');
-            hideMainUI();
-        });
+        document.getElementById('btnMoreInfo').addEventListener('click', () => { appWrapper.className = "slide-to-moreinfo"; hideMainUI(); });
 
-        subCards.forEach(card => {
-            card.addEventListener('click', () => {
-                appWrapper.className = ""; 
-                appWrapper.classList.add('slide-to-pay');
-                hideMainUI();
-            });
-        });
+        document.querySelectorAll('.sub-card').forEach(c => c.addEventListener('click', () => { appWrapper.className = "slide-to-pay"; hideMainUI(); }));
+        document.querySelectorAll('.backToHome').forEach(b => b.addEventListener('click', () => { appWrapper.className = ""; showMainUI(); }));
 
-        backToHomeBtns.forEach(btn => {
-            btn.addEventListener('click', () => { 
-                appWrapper.className = ""; 
-                showMainUI();
-            });
-        });
+        document.getElementById('btnInstructions').addEventListener('click', () => document.getElementById('instructionsModal').style.display = 'flex');
+        document.getElementById('closeInstructionsBtn').addEventListener('click', () => document.getElementById('instructionsModal').style.display = 'none');
 
-        const OWNER_SECRET_PASSWORD = "moje_tajne_haslo123";
-
-        const loginBtn = document.getElementById('loginBtn');
-        const logoutBtn = document.getElementById('logoutBtn');
-        const loginForm = document.getElementById('loginForm');
-        const userProfile = document.getElementById('userProfile');
-        const usernameInput = document.getElementById('usernameInput');
-        const passwordInput = document.getElementById('passwordInput');
-        
-        const displayUsername = document.getElementById('displayUsername');
-        const displayAvatar = document.getElementById('displayAvatar');
-        const displayRank = document.getElementById('displayRank');
-        const adminPanelBtn = document.getElementById('adminPanelBtn');
-
-        const editProfileBtn = document.getElementById('editProfileBtn');
-        const editModal = document.getElementById('editModal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-        const saveProfileBtn = document.getElementById('saveProfileBtn');
-        const editUsernameInput = document.getElementById('editUsernameInput');
-        const editPasswordInput = document.getElementById('editPasswordInput');
-        const editAvatarInput = document.getElementById('editAvatarInput');
-
-        const deleteAccountBtn = document.getElementById('deleteAccountBtn');
-        const deleteConfirmModal = document.getElementById('deleteConfirmModal');
-        const confirmYesBtn = document.getElementById('confirmYesBtn');
-        const confirmNoBtn = document.getElementById('confirmNoBtn');
-
-        const adminModal = document.getElementById('adminModal');
-        const closeAdminModalBtn = document.getElementById('closeAdminModalBtn');
-        const targetUserInput = document.getElementById('targetUserInput');
-        const giveAdminBtn = document.getElementById('giveAdminBtn');
-        const giveUserBtn = document.getElementById('giveUserBtn');
-        const subTargetInput = document.getElementById('subTargetInput');
-        const subDaysSelect = document.getElementById('subDaysSelect');
-        const giveSubBtn = document.getElementById('giveSubBtn');
-        
-        const subTimeLeft = document.getElementById('subTimeLeft');
+        // ==========================================
+        // SYSTEM LOGOWANIA
+        // ==========================================
         let countdownInterval;
-
-        const btnInstructions = document.getElementById('btnInstructions');
-        const instructionsModal = document.getElementById('instructionsModal');
-        const closeInstructionsBtn = document.getElementById('closeInstructionsBtn');
-
-        btnInstructions.addEventListener('click', () => { instructionsModal.style.display = 'flex'; });
-        closeInstructionsBtn.addEventListener('click', () => { instructionsModal.style.display = 'none'; });
 
         function updateSubscriptionUI(savedUser, currentRank) {
             clearInterval(countdownInterval);
-            if (!savedUser) { downloadContainer.style.display = 'none'; return; }
+            const dlContainer = document.getElementById('downloadContainer');
+            const subTimeLeft = document.getElementById('subTimeLeft');
+            
+            if (!savedUser) { dlContainer.style.display = 'none'; return; }
 
             if (currentRank === 'Owner' || currentRank === 'Admin') {
-                downloadContainer.style.display = 'flex';
+                dlContainer.style.display = 'flex';
                 subTimeLeft.textContent = 'LifeTime';
                 return;
             }
 
-            const subsInfo = JSON.parse(localStorage.getItem('prototypeSubs') || "{}");
-            // Szukamy niezależnie od wielkości liter
-            const userKey = Object.keys(subsInfo).find(k => k.toLowerCase() === savedUser.toLowerCase());
-            const expiryTime = userKey ? subsInfo[userKey] : null;
+            const subsDB = getDB(DB_SUBS, {});
+            const userKey = Object.keys(subsDB).find(k => k.toLowerCase() === savedUser.toLowerCase());
+            const expiryTime = userKey ? subsDB[userKey] : null;
 
             if (expiryTime && Date.now() < expiryTime) {
-                downloadContainer.style.display = 'flex';
+                dlContainer.style.display = 'flex';
                 const updateTimer = () => {
                     const diff = expiryTime - Date.now();
-                    if (diff <= 0) { downloadContainer.style.display = 'none'; clearInterval(countdownInterval); } 
+                    if (diff <= 0) { dlContainer.style.display = 'none'; clearInterval(countdownInterval); } 
                     else {
                         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
                         const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -786,364 +688,248 @@
                 };
                 updateTimer();
                 countdownInterval = setInterval(updateTimer, 1000);
-            } else { downloadContainer.style.display = 'none'; }
+            } else { dlContainer.style.display = 'none'; }
         }
 
         function checkLoginStatus() {
-            const savedUser = localStorage.getItem('prototypeUsername');
-            const savedAvatar = localStorage.getItem('prototypeAvatar');
+            const savedUser = localStorage.getItem(KEY_USER);
             let currentRank = 'User';
 
             if (savedUser) {
-                loginForm.style.display = 'none';
-                displayUsername.textContent = savedUser;
-                displayAvatar.textContent = savedAvatar ? savedAvatar : '?';
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('displayUsername').textContent = savedUser;
+                document.getElementById('displayAvatar').textContent = localStorage.getItem(KEY_AVATAR) || '?';
                 
-                const forcedAdminList = JSON.parse(localStorage.getItem('prototypeAdmins') || "[]");
-                const isAdmin = forcedAdminList.some(name => name.toLowerCase() === savedUser.toLowerCase());
+                const adminsList = getDB(DB_ADMINS, []);
+                const isAdmin = adminsList.some(name => name.toLowerCase() === savedUser.toLowerCase());
                 
-                if (savedUser.toLowerCase() === 'owner') { currentRank = 'Owner'; } 
-                else if (isAdmin) { currentRank = 'Admin'; }
+                if (savedUser.toLowerCase() === 'owner') currentRank = 'Owner';
+                else if (isAdmin) currentRank = 'Admin';
 
-                displayRank.textContent = 'Rank: ' + currentRank;
-                userProfile.style.display = 'flex';
-
-                if (currentRank === 'Owner' || currentRank === 'Admin') { adminPanelBtn.style.display = 'inline-block'; } 
-                else { adminPanelBtn.style.display = 'none'; }
+                document.getElementById('displayRank').textContent = 'Rank: ' + currentRank;
+                document.getElementById('userProfile').style.display = 'flex';
+                document.getElementById('adminPanelBtn').style.display = (currentRank === 'Owner' || currentRank === 'Admin') ? 'inline-block' : 'none';
             } else {
-                userProfile.style.display = 'none';
-                loginForm.style.display = 'flex';
-                adminPanelBtn.style.display = 'none';
+                document.getElementById('userProfile').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'flex';
+                document.getElementById('adminPanelBtn').style.display = 'none';
             }
             updateSubscriptionUI(savedUser, currentRank);
         }
 
         checkLoginStatus();
 
-        loginBtn.addEventListener('click', () => {
-            let typedName = usernameInput.value.trim();
-            let typedPassword = passwordInput.value.trim();
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            const uInput = document.getElementById('usernameInput');
+            const pInput = document.getElementById('passwordInput');
+            const typedName = uInput.value.trim();
+            const typedPass = pInput.value.trim();
 
-            if (typedName === '' || typedPassword === '') { alert('Complete Login and Password!'); return; }
+            if (!typedName || !typedPass) { alert('Complete Login and Password!'); return; }
 
             let finalName = typedName;
-            let usersDB = JSON.parse(localStorage.getItem('prototypeUsersDB') || "{}");
-            let avatarsDB = JSON.parse(localStorage.getItem('prototypeAvatarsDB') || "{}");
+            let users = getDB(DB_USERS, {});
+            let avatars = getDB(DB_AVATARS, {});
 
             if (typedName.toLowerCase() === 'owner') {
-                if (passwordInput.value !== OWNER_SECRET_PASSWORD) { alert('CRITICAL ERROR: Invalid Secret Password for Owner status!'); return; }
+                if (typedPass !== OWNER_SECRET_PASSWORD) { alert('Invalid Secret Password for Owner status!'); return; }
                 finalName = 'Owner';
-                if(!avatarsDB['Owner']) avatarsDB['Owner'] = '?';
             } else {
-                const existingKey = Object.keys(usersDB).find(k => k.toLowerCase() === typedName.toLowerCase());
+                const existingKey = Object.keys(users).find(k => k.toLowerCase() === typedName.toLowerCase());
                 if (existingKey) {
-                    if (usersDB[existingKey] !== typedPassword) {
-                        alert('Wrong password! This account is protected.');
-                        return;
-                    }
+                    if (users[existingKey] !== typedPass) { alert('Wrong password! This account is protected.'); return; }
                     finalName = existingKey;
                 } else {
-                    usersDB[finalName] = typedPassword;
-                    avatarsDB[finalName] = '?';
-                    localStorage.setItem('prototypeUsersDB', JSON.stringify(usersDB));
-                    localStorage.setItem('prototypeAvatarsDB', JSON.stringify(avatarsDB));
+                    users[finalName] = typedPass;
+                    avatars[finalName] = '?';
+                    setDB(DB_USERS, users);
+                    setDB(DB_AVATARS, avatars);
                 }
             }
 
-            localStorage.setItem('prototypeUsername', finalName);
-            localStorage.setItem('prototypeAvatar', avatarsDB[finalName] || '?'); 
-            localStorage.setItem('prototypePassword', typedPassword);
+            localStorage.setItem(KEY_USER, finalName);
+            localStorage.setItem(KEY_PASS, typedPass);
+            localStorage.setItem(KEY_AVATAR, avatars[finalName] || '?');
+            
+            uInput.value = ''; pInput.value = '';
             checkLoginStatus();
         });
 
-        logoutBtn.addEventListener('click', () => {
-            localStorage.removeItem('prototypeUsername');
-            localStorage.removeItem('prototypeAvatar');
-            localStorage.removeItem('prototypePassword');
-            usernameInput.value = passwordInput.value = '';
-            appWrapper.className = "";
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            localStorage.removeItem(KEY_USER); localStorage.removeItem(KEY_PASS); localStorage.removeItem(KEY_AVATAR);
+            appWrapper.className = ""; checkLoginStatus();
+        });
+
+        // ==========================================
+        // EDYCJA I USUWANIE PROFILU
+        // ==========================================
+        document.getElementById('editProfileBtn').addEventListener('click', () => {
+            document.getElementById('editUsernameInput').value = document.getElementById('displayUsername').textContent;
+            document.getElementById('editPasswordInput').value = localStorage.getItem(KEY_PASS) || '';
+            let currentAv = document.getElementById('displayAvatar').textContent;
+            document.getElementById('editAvatarInput').value = currentAv === '?' ? '' : currentAv;
+            document.getElementById('editModal').style.display = 'flex';
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', () => document.getElementById('editModal').style.display = 'none');
+
+        document.getElementById('saveProfileBtn').addEventListener('click', () => {
+            const newName = document.getElementById('editUsernameInput').value.trim();
+            const newPass = document.getElementById('editPasswordInput').value;
+            let newAv = document.getElementById('editAvatarInput').value.trim() || '?';
+            const oldName = document.getElementById('displayUsername').textContent;
+
+            if (!newName) { alert('Username cannot be empty!'); return; }
+            if (oldName.toLowerCase() === 'owner') { alert('Owner account cannot be modified!'); return; }
+
+            let users = getDB(DB_USERS, {});
+            let avatars = getDB(DB_AVATARS, {});
+            
+            if (Object.keys(users).find(k => k.toLowerCase() === newName.toLowerCase() && k !== oldName)) {
+                alert('This username is already taken!'); return;
+            }
+
+            delete users[oldName]; users[newName] = newPass;
+            delete avatars[oldName]; avatars[newName] = newAv;
+            setDB(DB_USERS, users); setDB(DB_AVATARS, avatars);
+
+            let subs = getDB(DB_SUBS, {});
+            if (subs[oldName]) { subs[newName] = subs[oldName]; delete subs[oldName]; setDB(DB_SUBS, subs); }
+
+            localStorage.setItem(KEY_USER, newName); localStorage.setItem(KEY_PASS, newPass); localStorage.setItem(KEY_AVATAR, newAv);
+            document.getElementById('editModal').style.display = 'none';
             checkLoginStatus();
         });
 
-        editProfileBtn.addEventListener('click', () => {
-            editUsernameInput.value = displayUsername.textContent;
-            editPasswordInput.value = localStorage.getItem('prototypePassword') || '';
-            editAvatarInput.value = displayAvatar.textContent === '?' ? '' : displayAvatar.textContent;
-            editModal.style.display = 'flex';
+        document.getElementById('deleteAccountBtn').addEventListener('click', () => {
+            if(document.getElementById('displayUsername').textContent.toLowerCase() === 'owner') { alert('Cannot delete Owner!'); return; }
+            document.getElementById('deleteConfirmModal').style.display = 'flex';
+        });
+        document.getElementById('confirmNoBtn').addEventListener('click', () => document.getElementById('deleteConfirmModal').style.display = 'none');
+        document.getElementById('confirmYesBtn').addEventListener('click', () => {
+            const currentUser = document.getElementById('displayUsername').textContent;
+            let users = getDB(DB_USERS, {}); let avatars = getDB(DB_AVATARS, {}); let subs = getDB(DB_SUBS, {});
+            delete users[currentUser]; delete avatars[currentUser]; delete subs[currentUser];
+            setDB(DB_USERS, users); setDB(DB_AVATARS, avatars); setDB(DB_SUBS, subs);
+            localStorage.removeItem(KEY_USER); localStorage.removeItem(KEY_PASS); localStorage.removeItem(KEY_AVATAR);
+            document.getElementById('deleteConfirmModal').style.display = 'none';
+            document.getElementById('editModal').style.display = 'none';
+            appWrapper.className = ""; checkLoginStatus();
         });
 
-        closeModalBtn.addEventListener('click', () => { editModal.style.display = 'none'; });
+        // ==========================================
+        // PANEL ADMINA
+        // ==========================================
+        const adminModal = document.getElementById('adminModal');
+        document.getElementById('adminPanelBtn').addEventListener('click', () => adminModal.style.display = 'flex');
+        document.getElementById('closeAdminModalBtn').addEventListener('click', () => adminModal.style.display = 'none');
 
-        saveProfileBtn.addEventListener('click', () => {
-            const newName = editUsernameInput.value.trim();
-            let newAvatar = editAvatarInput.value.trim();
-            const newPass = editPasswordInput.value;
-            const oldName = displayUsername.textContent;
-
-            if (newName !== '') {
-                if (newAvatar === '') newAvatar = '?';
-                if (oldName.toLowerCase() === 'owner') { alert('Owner account name cannot be changed!'); return; }
-
-                let usersDB = JSON.parse(localStorage.getItem('prototypeUsersDB') || "{}");
-                let avatarsDB = JSON.parse(localStorage.getItem('prototypeAvatarsDB') || "{}");
-
-                const nameConflict = Object.keys(usersDB).find(k => k.toLowerCase() === newName.toLowerCase() && k !== oldName);
-                if (nameConflict) {
-                    alert('This username is already taken by someone else!');
-                    return;
-                }
-
-                delete usersDB[oldName];
-                usersDB[newName] = newPass;
-                localStorage.setItem('prototypeUsersDB', JSON.stringify(usersDB));
-                
-                delete avatarsDB[oldName];
-                avatarsDB[newName] = newAvatar;
-                localStorage.setItem('prototypeAvatarsDB', JSON.stringify(avatarsDB));
-
-                const subsInfo = JSON.parse(localStorage.getItem('prototypeSubs') || "{}");
-                if (subsInfo[oldName]) {
-                    subsInfo[newName] = subsInfo[oldName];
-                    delete subsInfo[oldName];
-                    localStorage.setItem('prototypeSubs', JSON.stringify(subsInfo));
-                }
-
-                localStorage.setItem('prototypeUsername', newName);
-                localStorage.setItem('prototypeAvatar', newAvatar);
-                localStorage.setItem('prototypePassword', newPass);
-
-                editModal.style.display = 'none';
-                checkLoginStatus();
-            } else { alert('Username cannot be empty!'); }
+        document.getElementById('giveAdminBtn').addEventListener('click', () => {
+            const target = document.getElementById('targetUserInput').value.trim();
+            if(!target || target.toLowerCase() === 'owner') return;
+            let admins = getDB(DB_ADMINS, []);
+            if (!admins.some(a => a.toLowerCase() === target.toLowerCase())) {
+                admins.push(target); setDB(DB_ADMINS, admins); alert(`${target} is now Admin.`);
+            } else alert('Already Admin!');
+            document.getElementById('targetUserInput').value = '';
         });
 
-        deleteAccountBtn.addEventListener('click', () => {
-            if(displayUsername.textContent.toLowerCase() === 'owner') { alert('You cannot delete the Owner account!'); return; }
-            deleteConfirmModal.style.display = 'flex';
+        document.getElementById('giveUserBtn').addEventListener('click', () => {
+            const target = document.getElementById('targetUserInput').value.trim();
+            if(!target || target.toLowerCase() === 'owner') return;
+            let admins = getDB(DB_ADMINS, []);
+            if (admins.some(a => a.toLowerCase() === target.toLowerCase())) {
+                setDB(DB_ADMINS, admins.filter(a => a.toLowerCase() !== target.toLowerCase())); alert(`${target} demoted.`);
+            } else alert('Not an Admin.');
+            document.getElementById('targetUserInput').value = '';
         });
-        
-        confirmNoBtn.addEventListener('click', () => { deleteConfirmModal.style.display = 'none'; });
-        
-        confirmYesBtn.addEventListener('click', () => {
-            const currentUser = displayUsername.textContent;
-            let usersDB = JSON.parse(localStorage.getItem('prototypeUsersDB') || "{}");
-            let avatarsDB = JSON.parse(localStorage.getItem('prototypeAvatarsDB') || "{}");
-            const subsInfo = JSON.parse(localStorage.getItem('prototypeSubs') || "{}");
-            
-            delete usersDB[currentUser];
-            delete avatarsDB[currentUser];
-            delete subsInfo[currentUser];
-            
-            localStorage.setItem('prototypeUsersDB', JSON.stringify(usersDB));
-            localStorage.setItem('prototypeAvatarsDB', JSON.stringify(avatarsDB));
-            localStorage.setItem('prototypeSubs', JSON.stringify(subsInfo));
 
-            localStorage.removeItem('prototypeUsername');
-            localStorage.removeItem('prototypeAvatar');
-            localStorage.removeItem('prototypePassword');
-            
-            deleteConfirmModal.style.display = 'none';
-            editModal.style.display = 'none';
-            usernameInput.value = passwordInput.value = '';
-            appWrapper.className = "";
+        document.getElementById('giveSubBtn').addEventListener('click', () => {
+            const target = document.getElementById('subTargetInput').value.trim();
+            const days = parseInt(document.getElementById('subDaysSelect').value);
+            if(!target) return;
+            let subs = getDB(DB_SUBS, {});
+            const actualKey = Object.keys(subs).find(k => k.toLowerCase() === target.toLowerCase()) || target;
+            let expiry = subs[actualKey] || Date.now();
+            if (expiry < Date.now()) expiry = Date.now();
+            subs[actualKey] = expiry + (days * 24 * 60 * 60 * 1000);
+            setDB(DB_SUBS, subs);
+            alert(`Added ${days} days to ${actualKey}.`);
+            document.getElementById('subTargetInput').value = '';
             checkLoginStatus();
         });
 
-        adminPanelBtn.addEventListener('click', () => { adminModal.style.display = 'flex'; });
-        closeAdminModalBtn.addEventListener('click', () => { adminModal.style.display = 'none'; });
-
-        giveAdminBtn.addEventListener('click', () => {
-            const userToPromote = targetUserInput.value.trim();
-            if(!userToPromote) { alert('Enter username first!'); return; }
-            if(userToPromote.toLowerCase() === 'owner') { alert('Cannot modify Owner!'); return; }
-
-            let admins = JSON.parse(localStorage.getItem('prototypeAdmins') || "[]");
-            if (!admins.some(a => a.toLowerCase() === userToPromote.toLowerCase())) {
-                admins.push(userToPromote);
-                localStorage.setItem('prototypeAdmins', JSON.stringify(admins));
-                alert(`Success! ${userToPromote} is now an Admin.`);
-            } else { alert('This user is already an Admin!'); }
-            targetUserInput.value = '';
-        });
-
-        giveUserBtn.addEventListener('click', () => {
-            const userToDemote = targetUserInput.value.trim();
-            if(!userToDemote) { alert('Enter username first!'); return; }
-            if(userToDemote.toLowerCase() === 'owner') { alert('Cannot modify Owner!'); return; }
-
-            let admins = JSON.parse(localStorage.getItem('prototypeAdmins') || "[]");
-            if (admins.some(a => a.toLowerCase() === userToDemote.toLowerCase())) {
-                admins = admins.filter(name => name.toLowerCase() !== userToDemote.toLowerCase());
-                localStorage.setItem('prototypeAdmins', JSON.stringify(admins));
-                alert(`Success! ${userToDemote} demoted to User.`);
-            } else { alert('This user is not an Admin.'); }
-            targetUserInput.value = '';
-        });
-
-        giveSubBtn.addEventListener('click', () => {
-            const targetUser = subTargetInput.value.trim();
-            const daysToAdd = parseInt(subDaysSelect.value);
-
-            if(!targetUser) { alert('Enter username to give sub!'); return; }
-
-            let subsInfo = JSON.parse(localStorage.getItem('prototypeSubs') || "{}");
-            const msToAdd = daysToAdd * 24 * 60 * 60 * 1000;
-            
-            // Znajdź klucz niezależnie od wielkości liter
-            const actualKey = Object.keys(subsInfo).find(k => k.toLowerCase() === targetUser.toLowerCase()) || targetUser;
-            let currentExpiry = subsInfo[actualKey] || Date.now();
-            if (currentExpiry < Date.now()) { currentExpiry = Date.now(); }
-
-            subsInfo[actualKey] = currentExpiry + msToAdd;
-            localStorage.setItem('prototypeSubs', JSON.stringify(subsInfo));
-
-            alert(`Success! Added ${daysToAdd} days to ${actualKey}.`);
-            subTargetInput.value = '';
-            checkLoginStatus();
-        });
-
-        const submitTicketBtn = document.getElementById('submitTicketBtn');
-        const ticketMessageInput = document.getElementById('ticketMessage');
-        const userTicketsList = document.getElementById('userTicketsList');
-        
-        submitTicketBtn.addEventListener('click', () => {
-            const message = ticketMessageInput.value.trim();
-            if (!message) { alert('Ticket message cannot be empty!'); return; }
-            
-            const username = localStorage.getItem('prototypeUsername');
-            let tickets = JSON.parse(localStorage.getItem('prototypeTickets') || "[]");
-            
-            const date = new Date();
-            const dateString = `${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
-
+        // ==========================================
+        // TICKETY
+        // ==========================================
+        document.getElementById('submitTicketBtn').addEventListener('click', () => {
+            const msg = document.getElementById('ticketMessage').value.trim();
+            if (!msg) return;
+            const user = localStorage.getItem(KEY_USER);
+            let tickets = getDB(DB_TICKETS, []);
+            const d = new Date();
             tickets.push({
-                id: Date.now(),
-                user: username,
-                message: message,
-                reply: null,
-                date: dateString
+                id: Date.now(), user: user, message: msg, reply: null,
+                date: `${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}`
             });
-            
-            localStorage.setItem('prototypeTickets', JSON.stringify(tickets));
-            ticketMessageInput.value = '';
-            renderUserTickets();
-            alert('Ticket sent successfully!');
+            setDB(DB_TICKETS, tickets);
+            document.getElementById('ticketMessage').value = '';
+            renderUserTickets(); alert('Ticket sent!');
         });
 
         function renderUserTickets() {
-            const username = localStorage.getItem('prototypeUsername');
-            if(!username) return;
-            let tickets = JSON.parse(localStorage.getItem('prototypeTickets') || "[]");
+            const user = localStorage.getItem(KEY_USER);
+            if(!user) return;
+            let tickets = getDB(DB_TICKETS, []).filter(t => t.user.toLowerCase() === user.toLowerCase()).reverse();
+            const list = document.getElementById('userTicketsList');
+            if (!tickets.length) { list.innerHTML = '<div style="color: #aaa; text-align: center;">No tickets.</div>'; return; }
             
-            const userTickets = tickets.filter(t => t.user.toLowerCase() === username.toLowerCase()).reverse();
-            userTicketsList.innerHTML = '';
-            
-            if (userTickets.length === 0) {
-                userTicketsList.innerHTML = '<div style="color: #aaa; text-align: center;">You have not sent any tickets yet.</div>';
-                return;
-            }
-
-            userTickets.forEach(t => {
-                let replyHTML = t.reply 
-                    ? `<div class="ticket-reply-box">
-                         <div class="ticket-reply-title">Admin Reply:</div>
-                         <div>${t.reply}</div>
-                       </div>` 
-                    : `<div style="color: #ffcc00; font-size: 0.8em; margin-top: 10px; font-weight: bold; text-transform: uppercase;">Status: Waiting for reply...</div>`;
-                    
-                userTicketsList.innerHTML += `
-                    <div class="ticket-card">
-                        <div class="ticket-header">
-                            <span>Ticket #${t.id.toString().slice(-4)}</span>
-                            <span>${t.date}</span>
-                        </div>
-                        <div class="ticket-body">${t.message}</div>
-                        ${replyHTML}
-                    </div>
-                `;
-            });
+            list.innerHTML = tickets.map(t => `
+                <div class="ticket-card">
+                    <div class="ticket-header"><span>Ticket #${t.id.toString().slice(-4)}</span><span>${t.date}</span></div>
+                    <div class="ticket-body">${t.message}</div>
+                    ${t.reply ? `<div class="ticket-reply-box"><div class="ticket-reply-title">Admin Reply:</div><div>${t.reply}</div></div>` 
+                              : `<div style="color: #ffcc00; font-size: 0.8em; margin-top: 10px; font-weight: bold;">WAITING FOR REPLY...</div>`}
+                </div>
+            `).join('');
         }
 
-        const openTicketsManagerBtn = document.getElementById('openTicketsManagerBtn');
         const manageTicketsModal = document.getElementById('manageTicketsModal');
-        const closeManageTicketsBtn = document.getElementById('closeManageTicketsBtn');
-        const adminTicketsList = document.getElementById('adminTicketsList');
-
-        openTicketsManagerBtn.addEventListener('click', () => {
-            manageTicketsModal.style.display = 'flex';
-            renderAdminTickets();
-        });
-
-        closeManageTicketsBtn.addEventListener('click', () => {
-            manageTicketsModal.style.display = 'none';
-        });
+        document.getElementById('openTicketsManagerBtn').addEventListener('click', () => { manageTicketsModal.style.display = 'flex'; renderAdminTickets(); });
+        document.getElementById('closeManageTicketsBtn').addEventListener('click', () => manageTicketsModal.style.display = 'none');
 
         function renderAdminTickets() {
-            let tickets = JSON.parse(localStorage.getItem('prototypeTickets') || "[]").reverse();
-            adminTicketsList.innerHTML = '';
+            let tickets = getDB(DB_TICKETS, []).reverse();
+            const list = document.getElementById('adminTicketsList');
+            if (!tickets.length) { list.innerHTML = '<div style="color: #aaa; text-align: center; margin-top: 20px;">No tickets found.</div>'; return; }
             
-            if (tickets.length === 0) {
-                adminTicketsList.innerHTML = '<div style="color: #aaa; text-align: center; margin-top: 20px;">No tickets found.</div>';
-                return;
-            }
-
-            tickets.forEach(t => {
-                let actionHTML = '';
-                if (!t.reply) {
-                    actionHTML = `
-                        <textarea id="reply-${t.id}" class="login-input admin-reply-input" placeholder="Type your answer here..."></textarea>
-                        <button class="top-btn btn-reply" onclick="submitAdminReply(${t.id})">Send Reply</button>
-                    `;
-                } else {
-                    actionHTML = `
-                        <div class="ticket-reply-box">
-                            <div class="ticket-reply-title">You Replied:</div>
-                            <div>${t.reply}</div>
-                        </div>
-                    `;
-                }
-
-                adminTicketsList.innerHTML += `
-                    <div class="ticket-card admin-view">
-                        <div class="ticket-header" style="color: #3498db; border-color: #2c3e50;">
-                            <span style="font-weight: bold; font-size: 1.1em;">User: ${t.user}</span>
-                            <span>${t.date}</span>
-                        </div>
-                        <div class="ticket-body">${t.message}</div>
-                        ${actionHTML}
-                    </div>
-                `;
-            });
+            list.innerHTML = tickets.map(t => `
+                <div class="ticket-card admin-view">
+                    <div class="ticket-header" style="color: #3498db; border-color: #2c3e50;"><span style="font-weight: bold;">User: ${t.user}</span><span>${t.date}</span></div>
+                    <div class="ticket-body">${t.message}</div>
+                    ${!t.reply ? `<textarea id="reply-${t.id}" class="login-input admin-reply-input" placeholder="Type answer..."></textarea>
+                                  <button class="top-btn btn-reply" onclick="submitAdminReply(${t.id})">Send Reply</button>`
+                               : `<div class="ticket-reply-box"><div class="ticket-reply-title">You Replied:</div><div>${t.reply}</div></div>`}
+                </div>
+            `).join('');
         }
 
         window.submitAdminReply = function(ticketId) {
-            const replyInput = document.getElementById(`reply-${ticketId}`);
-            const replyText = replyInput.value.trim();
-            if (!replyText) { alert('Reply cannot be empty!'); return; }
-            
-            let tickets = JSON.parse(localStorage.getItem('prototypeTickets') || "[]");
-            const ticketIndex = tickets.findIndex(t => t.id === ticketId);
-            
-            if (ticketIndex > -1) {
-                tickets[ticketIndex].reply = replyText;
-                localStorage.setItem('prototypeTickets', JSON.stringify(tickets));
-                renderAdminTickets(); 
-            }
+            const input = document.getElementById(`reply-${ticketId}`);
+            if(!input || !input.value.trim()) return;
+            let tickets = getDB(DB_TICKETS, []);
+            let idx = tickets.findIndex(t => t.id === ticketId);
+            if(idx > -1) { tickets[idx].reply = input.value.trim(); setDB(DB_TICKETS, tickets); renderAdminTickets(); }
         };
 
-        /* ============================================================ */
-        /* LIVE-SYNC: Słuchacz zdarzeń synchronizujący zakładki w tle   */
-        /* ============================================================ */
-        window.addEventListener('storage', () => {
-            checkLoginStatus();
-            if (appWrapper.classList.contains('slide-to-tickets')) {
-                renderUserTickets();
-            }
-            if (manageTicketsModal.style.display === 'flex') {
-                renderAdminTickets();
+        // Live-Sync: Odświeżanie zmian w locie z blokadą błędów
+        window.addEventListener('storage', (e) => {
+            if (e.key && e.key.startsWith('pt_v2_')) {
+                checkLoginStatus();
+                if (appWrapper.classList.contains('slide-to-tickets')) renderUserTickets();
+                if (manageTicketsModal.style.display === 'flex') renderAdminTickets();
             }
         });
-
     </script>
 </body>
 </html>
